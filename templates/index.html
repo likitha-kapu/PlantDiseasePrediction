@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌱 Plant Disease Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> <!-- optional -->
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Plant Disease Detector</h1>
+    <p class="subtitle">Upload a plant leaf image to identify the disease</p>
+
+    <!-- Upload box -->
+    <form id="uploadForm" enctype="multipart/form-data">
+      <div class="upload-box" id="dropArea">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Drag & Drop an image here <br> or <span>Click to Upload</span></p>
+        <input type="file" name="file" id="fileInput" accept="image/*" hidden>
+      </div>
+      <button type="submit" class="btn">🔍 Detect Disease</button>
+    </form>
+
+    <!-- Preview -->
+    <div class="preview" id="preview"></div>
+
+    <!-- Result -->
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
